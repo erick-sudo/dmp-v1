@@ -41,9 +41,10 @@ const textTracks = [
 
 interface PlayerProps {
   className?: string;
+  src: string;
 }
 
-export function Player({ className }: PlayerProps) {
+export function Player({ className, src }: PlayerProps) {
   const player = useRef<MediaPlayerInstance>(null);
 
   function onCanPlay(
@@ -68,21 +69,21 @@ export function Player({ className }: PlayerProps) {
       <MediaPlayer
         className="w-full aspect-video bg-zinc-700 text-white overflow-hidden rounded-lg ring-media-focus data-[focus]:ring-4"
         title="Sprite Fight"
-        src="https://files.vidstack.io/sprite-fight/720p.mp4"
+        src={src}
         crossOrigin
         playsInline
         onCanPlay={onCanPlay}
         ref={player}
       >
         <MediaProvider>
-          <Poster
+          {/* <Poster
             className="absolute inset-0 block h-full w-full rounded-lg opacity-0 object-cover transition-opacity data-[visible]:opacity-100"
             src="https://files.vidstack.io/sprite-fight/poster.webp"
             alt="Girl walks into campfire with gnomes surrounding her friend ready for theri next meal!"
           />
           {textTracks.map((track) => (
             <Track key={track.src} {...track} />
-          ))}
+          ))} */}
         </MediaProvider>
         <VideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" />
       </MediaPlayer>
