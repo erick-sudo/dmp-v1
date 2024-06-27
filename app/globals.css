@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --media-brand: 245 245 245;
+  --media-focus: 78 156 246;
+}
+
+.button {
+  @apply bg-cyan-500 hover:bg-cyan-500/10 hover:ring-1 hover:ring-cyan-500/20 hover:text-cyan-400 duration-300;
+}
+
+.cyan-hover {
+  @apply hover:ring-1 hover:ring-cyan-400/20 hover:text-cyan-400 hover:bg-cyan-500/10 duration-300;
+}
+
+.text-grad {
+  @apply bg-gradient-to-r w-max bg-clip-text text-transparent from-cyan-400 via-white to-white;
+}
+
+.vertical-scrollbar {
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
+
+.horizontal-scrollbar {
+  overflow-x: scroll;
+}
+
+.vertical-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb,
+.vertical-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(34 211 238);
+  border-radius: 10px;
+}
