@@ -45,7 +45,7 @@ export default function NewReleases() {
                   fill
                   objectFit="cover"
                 /> */}
-                <Player />
+                <Player src="https://youtu.be/GvOUI0PlloY?feature=shared" />
               </div>
               <div className="p-4">
                 <h5 className="text-white text-2xl mb-2">{release.title}</h5>

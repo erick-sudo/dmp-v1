@@ -92,7 +92,7 @@ export default function FeaturesSection() {
                 fill
                 objectFit="cover"
               /> */}
-              <Player />
+              <Player src="https://youtu.be/GvOUI0PlloY?feature=shared" />
               <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/50 flex flex-col justify-end">
                 <h4 className="p-4 text-xl text-cyan-400">{t.title}</h4>
               </div>
