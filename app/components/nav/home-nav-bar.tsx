@@ -5,13 +5,10 @@ import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSpring, animated } from "@react-spring/web";
 import Link from "next/link";
 import React, { useState } from "react";
-import BreadCrumbs from "../bread-crumbs";
 import { NavButton } from "./nav-button";
 import { usePathname } from "next/navigation";
 
-const tabs = [
-  { title: "Home", path: "" },
-  { title: "Explore", path: "content" },
+const exploreTabs = [
   { title: "Documentaries", path: "content/documentaries" },
   { title: "Music", path: "content/music" },
   { title: "Live Stream", path: "content/live" },
@@ -22,7 +19,6 @@ const tabs = [
 
 export function NavBar() {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
   const pathName = usePathname();
 
   const popUpSprings = useSpring({
@@ -39,25 +35,27 @@ export function NavBar() {
 
   return (
     <>
-      <div className="flex sticky top-0 text-white text-sm items-center container mx-auto gap-4 p-2">
+      <div className="flex text-white text-sm items-start container mx-auto gap-4 p-2">
         <div className="flex items-center gap-2">
-          <div>
-            {/* <Image
-              height={120}
-              width={120}
-              alt="Desert Mamba"
-              src="/images/logo.png"
-            /> */}
+          <div className="">
+            <div className="text-xl xl:text-2xl font-extrabold">
+              <span className="text-cyan-400">Desert</span> Mamba
+            </div>
+            <div className=" font-thin text-xl">Productions</div>
           </div>
         </div>
 
         {/* Large Screen */}
         <div className="hidden lg:flex justify-end gap-2 flex-grow">
           <ButtonGroup
-            items={tabs.map((t) => t.title)}
-            onChange={(newIndex) => setActiveTab(newIndex)}
-            activeIndex={activeTab}
+            items={["Home"]}
+            onChange={(newIndex) => { }}
+            activeIndex={0}
           >
+            {/* <DropDownMenu title="Explore">
+              {exploreTabs.map((tab, index) => (<MenuItem>
+              </MenuItem>))}
+            </DropDownMenu> */}
             <button className="px-6 py-2 button rounded-full">Search</button>
             <button className="px-6 py-2 button rounded-full">Login</button>
           </ButtonGroup>
@@ -88,16 +86,15 @@ export function NavBar() {
           </button>
         </div>
         <div className="grid gap-2 p-2">
-          {tabs.map((tab, index) => {
+          {exploreTabs.map((tab, index) => {
             const active = pathName.startsWith(`/${tab.path}`);
             return (
               <Link key={index} href={tab.path}>
                 <NavButton
-                  className={`rounded w-full  ${
-                    active
-                      ? "bg-zinc-950/50 ring-1 ring-inset ring-cyan-400/50 hover:bg-black duration-300"
-                      : "cyan-hover"
-                  }`}
+                  className={`rounded w-full  ${active
+                    ? "bg-zinc-950/50 ring-1 ring-inset ring-cyan-400/50 hover:bg-black duration-300"
+                    : "cyan-hover"
+                    }`}
                   text={tab.title}
                   active={active}
                   hideText={false}
@@ -111,9 +108,9 @@ export function NavBar() {
         </div>
       </animated.div>
 
-      <div className="container mx-auto px-4 mt-2">
+      {/* <div className="container mx-auto px-4 mt-2">
         <BreadCrumbs />
-      </div>
+      </div> */}
     </>
   );
 }

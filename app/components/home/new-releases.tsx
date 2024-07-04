@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Player } from "../player/Player";
 
 const newReleases = [
@@ -28,23 +27,17 @@ const newReleases = [
 export default function NewReleases() {
   return (
     <div className="">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto p-4">
         <div className="py-2 flex justify-between">
           <h4 className="text-lg text-grad">New Releases For You</h4>
           <button className="px-4 text-cyan-400 hover:text-white duration-300">
             View More
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {newReleases.map((release, index) => (
             <div key={index} className="">
               <div className="h-48 relative rounded overflow-hidden">
-                {/* <Image
-                  alt=""
-                  src="https://cdn.pixabay.com/photo/2024/04/08/16/54/ai-generated-8683952_1280.jpg"
-                  fill
-                  objectFit="cover"
-                /> */}
                 <Player src="https://youtu.be/GvOUI0PlloY?feature=shared" />
               </div>
               <div className="p-4">

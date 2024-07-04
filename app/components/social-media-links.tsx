@@ -13,31 +13,31 @@ const socialMediaLinks: SocialMediaLink[] = [
     href: "",
     aspectRatio: 1,
     alt: "instagram",
-    src: "/images/socials/instagram.svg",
+    src: "/social-media-svgs/instagram.svg",
   },
   {
     href: "https://www.tiktok.com/@desertmambaproductions?_t=8nSUrrFGaMI&_r=1",
     aspectRatio: 36 / 40,
     alt: "tiktok",
-    src: "/images/socials/tiktok.svg",
+    src: "/social-media-svgs/tiktok.svg",
   },
   {
     href: "https://x.com/desertmambap?t=pZMXi6YeCYF42DkTw7GevQ&s=08",
     aspectRatio: 1,
     alt: "twitter",
-    src: "/images/socials/twitter.svg",
+    src: "/social-media-svgs/twitter.svg",
   },
   {
     href: "https://www.facebook.com/desertmambaproductions",
     aspectRatio: 49 / 40,
     alt: "facebook",
-    src: "/images/socials/facebook.svg",
+    src: "/social-media-svgs/facebook.svg",
   },
   {
     href: "https://youtube.com/@dmp-luonation?feature=shared",
     aspectRatio: 58 / 40,
     alt: "youtube",
-    src: "/images/socials/youtube.svg",
+    src: "/social-media-svgs/youtube.svg",
   },
 ];
 
