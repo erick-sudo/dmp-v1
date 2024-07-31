@@ -41,3 +41,11 @@
   background-color: rgb(34 211 238);
   border-radius: 10px;
 }
+
+.dark-txt-shadow {
+  text-shadow: 0.2em 0.2em 0.01em rgb(39 39 42 / .5);
+}
+
+.light-txt-shadow {
+  text-shadow: 0.2em 0.2em 0.06em rgb(255 255 255 / .5);
+}

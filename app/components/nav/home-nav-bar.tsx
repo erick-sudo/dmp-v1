@@ -35,42 +35,45 @@ export function NavBar() {
 
   return (
     <>
-      <div className="flex text-white text-sm items-start container mx-auto gap-4 p-2">
-        <div className="flex items-center gap-2">
-          <div className="">
-            <div className="text-xl xl:text-2xl font-extrabold">
-              <span className="text-cyan-400">Desert</span> Mamba
+      <div className="sticky top-0 bg-zinc-950/0 backdrop-blur z-50">
+        <div className="flex text-white text-sm items-start container mx-auto gap-4 p-2">
+          <div className="flex items-center gap-2">
+            <div className="">
+              <div className="text-2xl font-extrabold">
+                <span className="text-cyan-400">Desert</span> Mamba
+              </div>
+              <div className=" font-thin text-xl">Productions</div>
             </div>
-            <div className=" font-thin text-xl">Productions</div>
           </div>
-        </div>
 
-        {/* Large Screen */}
-        <div className="hidden lg:flex justify-end gap-2 flex-grow">
-          <ButtonGroup
-            items={["Home"]}
-            onChange={(newIndex) => { }}
-            activeIndex={0}
-          >
-            {/* <DropDownMenu title="Explore">
+          {/* Large Screen */}
+          <div className="hidden lg:flex justify-end gap-2 flex-grow">
+            <ButtonGroup
+              items={["Home"]}
+              onChange={(newIndex) => {}}
+              activeIndex={0}
+            >
+              {/* <DropDownMenu title="Explore">
               {exploreTabs.map((tab, index) => (<MenuItem>
               </MenuItem>))}
             </DropDownMenu> */}
-            <button className="px-6 py-2 button rounded-full">Search</button>
-            <button className="px-6 py-2 button rounded-full">Login</button>
-          </ButtonGroup>
-        </div>
+              <button className="px-6 py-2 button rounded-full">Search</button>
+              <button className="px-6 py-2 button rounded-full">Login</button>
+            </ButtonGroup>
+          </div>
 
-        {/* Small Screen */}
-        <div className="flex-grow lg:hidden flex justify-end">
-          <button
-            onClick={() => setOpenDrawer(true)}
-            className="ring-1 p-1 ring-zinc-700 rounded text-zinc-400 cyan-hover"
-          >
-            <Bars4Icon className="" height={24} />
-          </button>
+          {/* Small Screen */}
+          <div className="flex-grow lg:hidden flex justify-end">
+            <button
+              onClick={() => setOpenDrawer(true)}
+              className="ring-1 p-1 ring-zinc-700 rounded text-zinc-400 cyan-hover"
+            >
+              <Bars4Icon className="" height={24} />
+            </button>
+          </div>
         </div>
       </div>
+
       {/* Small Screen Popup */}
       <animated.div
         style={{ ...popUpSprings }}
@@ -91,10 +94,11 @@ export function NavBar() {
             return (
               <Link key={index} href={tab.path}>
                 <NavButton
-                  className={`rounded w-full  ${active
-                    ? "bg-zinc-950/50 ring-1 ring-inset ring-cyan-400/50 hover:bg-black duration-300"
-                    : "cyan-hover"
-                    }`}
+                  className={`rounded w-full  ${
+                    active
+                      ? "bg-zinc-950/50 ring-1 ring-inset ring-cyan-400/50 hover:bg-black duration-300"
+                      : "cyan-hover"
+                  }`}
                   text={tab.title}
                   active={active}
                   hideText={false}

@@ -67,7 +67,7 @@ export function Player({ className, src }: PlayerProps) {
   return (
     <div className={`${className}`}>
       <MediaPlayer
-        className="w-full aspect-video bg-zinc-700 text-white overflow-hidden rounded-lg ring-media-focus data-[focus]:ring-4"
+        className="w-full aspect-video bg-zinc-700 text-white overflow-hidden rounded ring-media-focus data-[focus]:ring-4"
         title="Sprite Fight"
         src={src}
         crossOrigin
@@ -76,14 +76,14 @@ export function Player({ className, src }: PlayerProps) {
         ref={player}
       >
         <MediaProvider>
-          {/* <Poster
+          <Poster
             className="absolute inset-0 block h-full w-full rounded-lg opacity-0 object-cover transition-opacity data-[visible]:opacity-100"
             src="https://files.vidstack.io/sprite-fight/poster.webp"
             alt="Girl walks into campfire with gnomes surrounding her friend ready for theri next meal!"
           />
           {textTracks.map((track) => (
             <Track key={track.src} {...track} />
-          ))} */}
+          ))}
         </MediaProvider>
         <VideoLayout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt" />
       </MediaPlayer>
@@ -99,12 +99,12 @@ interface PlayerCardProps {
 export function PlayerCard({ className, title }: PlayerCardProps) {
   return (
     <div className={className}>
-      <MediaPlayer src="" className="w-full h-[40vh] aspect-video bg-zinc-700 text-white overflow-hidden rounded-lg ring-media-focus data-[focus]:ring-4">
+      <MediaPlayer src="" className="w-full h-[40vh] aspect-video bg-zinc-700 text-white overflow-hidde rounded ring-media-focus data-[focus]:ring-4">
         <MediaProvider>
           <Poster
             src={"/images/poster.jpg"}
             alt={title}
-            className="absolute inset-0 block h-full w-full rounded-lg opacity-0 object-cover transition-opacity data-[visible]:opacity-100"
+            className="absolute inset-0 block h-full w-full rounded opacity-0 object-cover transition-opacity data-[visible]:opacity-100"
           />
         </MediaProvider>
         <PlayerCardLayout />

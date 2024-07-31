@@ -12,8 +12,9 @@ export const Newsletter: React.FC = () => {
       <div className="container py-12 px-4 lg:py-16 md:px-8 bg-brandGreen">
         <div className="mx-auto grid lg:grid-cols-5 gap-6 grid-cols-1">
           <div className="mb-8 lg:mb-0 lg:col-span-3">
-            <h2 className="text-4xl leading-10 font-extrabold text-white">
-              <span className="text-zinc-800">Stay Connected</span>&nbsp; with Desert Mamba Productions
+            <h2 className="text-4xl leading-10 font-extrabold">
+              <span className="text-zinc-800">Stay Connected</span>&nbsp;{" "}
+              <span className="dark-txt-shadow text-white/90">with Desert Mamba Productions</span>
             </h2>
             <p className="mt-3 text-lg md:max-w-2xl font-normal text-gray-200 leading-6">
               Join our newsletter to stay updated with the latest news and

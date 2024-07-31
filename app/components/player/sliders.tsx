@@ -30,7 +30,7 @@ export function Time({ thumbnails }: TimeSliderProps) {
         {(cues, forwardRef) =>
           cues.map((cue) => (
             <div
-              className="mr-0.5 last-child:mr-0 relative flex h-full w-full items-center rounded-[1px]"
+              className="mr-0.5 last:mr-0 relative flex h-full w-full items-center rounded-[1px]"
               style={{ contain: "layout style" }}
               key={cue.startTime}
               ref={forwardRef}
@@ -46,11 +46,13 @@ export function Time({ thumbnails }: TimeSliderProps) {
 
       <TimeSlider.Thumb className="absolute left-[var(--slider-fill)] top-1/2 z-20 h-[15px] w-[15px] bg-cyan-400 rounded-full -translate-x-1/2 -translate-y-1/2 border border-cyan-400 ring-cyan-400/40 opacity-0 transition-opacity group-data-[active]:opacity-100 group-data-[dragging]:ring-4 will-change-[left]" />
 
+      {/* className="animate-out fade-out slide-out-to-bottom-2 data-[visible]:animate-in data-[visible]:fade-in data-[visible]:slide-in-from-bottom-4 z-10 rounded-lg bg-pink-400/50 text-white backdrop-blur p-4 text-sm border border-pink-400/50 max-w-sm" */}
+
       <TimeSlider.Preview className="flex flex-col items-center transition-opacity duration-200 opacity-0 data-[visible]:opacity-100 pointer-events-none">
         {thumbnails ? (
           <TimeSlider.Thumbnail.Root
             src={thumbnails}
-            className="bloch h-[var(--thumbnail-height)] max-h-[160px] min-h-[80px] w-[var(--thumnail-width)] min-w-[120px] max-w-[180px] overflow-hidden ring-1 ring-cyan-500/50 shadow shadow-cyan-500/50 rounded-md bg-black"
+            className="bloch h-[var(--thumbnail-height)] max-h-[160px] min-h-[80px] w-[var(--thumbnail-width)] min-w-[120px] max-w-[180px] overflow-hidden ring-1 ring-cyan-500/50 shadow shadow-cyan-500/50 rounded-md bg-black"
           >
             <TimeSlider.Thumbnail.Img />
           </TimeSlider.Thumbnail.Root>
